@@ -1,5 +1,6 @@
 
 import { Arrow, DoubleArrow } from '../../icons';
+import { PaginationButton } from '../buttons';
 
 export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
@@ -34,35 +35,27 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
     return (
         <div className="flex w-full items-center justify-center space-x-1 py-3">
-            <button
-                type="button"
+            <PaginationButton
                 title="Primera página"
-                className={`h-8 w-8 border-[1.5px] border-[#012970] dark:border-[#ffffff] rounded text-[#012970] dark:text-white dark:bg-slate-700 transition rotate-180 ${
-                currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-blue-500'
-                }`}
+                icon={<DoubleArrow />}
                 onClick={() => onPageChange(1)}
                 disabled={currentPage === 1}
-            >
-                <DoubleArrow />
-            </button>
-            <button
-                type="button"
+                extraClasses="rotate-180"
+            />
+            <PaginationButton
                 title="Anterior"
-                className={`h-8 w-8 border-[1.5px] border-[#012970] dark:border-[#ffffff] rounded text-[#012970] dark:text-white dark:bg-slate-700 transition ${
-                currentPage === 1 ? 'cursor-not-allowed' : 'hover:bg-blue-500'
-                }`}
+                icon={<Arrow />}
                 onClick={() => onPageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-            >
-                <Arrow />
-            </button>
+                extraClasses="rotate-0"
+            />
             {getPageNumbers().map((pageNumber) => (
                 <button
                 type="button"
-                className={`h-8 w-8 border-[1.5px] border-[#012970] dark:border-[#ffffff] rounded text-[#012970] ${
+                className={`h-8 w-8 border-[1.5px] text-xl border-indigo-500 dark:border-white rounded text-indigo-700 transition-transform duration-300 ${
                     currentPage === pageNumber
                     ? 'bg-blue-500 text-white'
-                    : 'dark:text-white dark:bg-slate-700'
+                    : 'dark:text-white dark:bg-indigo-600 hover:bg-blue-500 hover:-translate-y-2'
                 }`}
                 key={pageNumber}
                 onClick={() => onPageChange(pageNumber)}
@@ -70,32 +63,20 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 {pageNumber}
                 </button>
             ))}
-            <button
-                type="button"
+            <PaginationButton
                 title="Siguiente"
-                className={`h-8 w-8 border-[1.5px] border-[#012970] dark:border-[#ffffff] rounded text-[#012970] dark:text-white dark:bg-slate-700 transition rotate-180 ${
-                currentPage === totalPages
-                    ? 'cursor-not-allowed'
-                    : 'hover:bg-blue-500'
-                }`}
+                icon={<Arrow />}
                 onClick={() => onPageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-            >
-                <Arrow />
-            </button>
-            <button
-                type="button"
+                extraClasses="rotate-180"
+            />
+            <PaginationButton
                 title="Última página"
-                className={`h-8 w-8 border-[1.5px] border-[#012970] dark:border-[#ffffff] rounded text-[#012970] dark:text-white dark:bg-slate-700 transition ${
-                currentPage === totalPages
-                    ? 'cursor-not-allowed'
-                    : 'hover:bg-blue-500'
-                }`}
+                icon={<DoubleArrow />}
                 onClick={() => onPageChange(totalPages)}
                 disabled={currentPage === totalPages}
-            >
-                <DoubleArrow />
-            </button>
+                extraClasses="rotate-0"
+            />
         </div>
     );
 };
