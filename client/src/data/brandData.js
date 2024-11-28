@@ -1,0 +1,23 @@
+export const brands = [
+    { id: 1, name: 'Audi', holder: 'Volkswagen', state: 'Alemania', active: true },
+    { id: 2, name: 'BMW', holder: 'BMW', state: 'Alemania', active: true },
+    { id: 3, name: 'Chevrolet', holder: 'General Motors', state:'Estados Unidos', active: true  },
+    { id: 4, name: 'Citroën', holder: 'Groupe PSA', state: 'Francia', active: true },
+    { id: 5, name: 'Fiat', holder: 'Fiat Chrysler Automobiles', state: 'Italia', active: true  },
+    { id: 6, name: 'Ford', holder: 'Ford', state:'Estados Unidos', active: true },
+    { id: 7, name: 'Honda', holder: 'Honda', state: 'Japón', active: true },
+    { id: 8, name: 'Hyundai', holder: 'Hyundai', state: 'Corea del Sur', active: true  },
+    { id: 9, name: 'Kia', holder: 'Hyundai', state: 'Corea del Sur', active: true },
+    { id: 10, name: 'Mazda', holder: 'Mazda', state: 'Japón', active: true },
+    { id: 11, name: 'Mercedes-Benz', holder: 'Daimler AG', state: 'Alemania', active: true  },
+    { id: 12, name: 'Mitsubishi', holder: 'Renault-Nissan-Mitsubishi Alliance', state: 'Japón', active: true  },
+    { id: 13, name: 'Nissan', holder: 'Renault-Nissan-Mitsubishi Alliance', state: 'Japón', active: true  },
+    { id: 14, name: 'Peugeot', holder: 'Groupe PSA', state: 'Francia', active: true  },
+    { id: 15, name: 'Renault', holder: 'Renault-Nissan-Mitsubishi Alliance', state: 'Francia', active: true  },
+    { id: 16, name: 'Seat', holder: 'Volkswagen', state: 'España', active: true }, 
+    { id: 17, name: 'Skoda', holder: 'Volkswagen', state: 'República Checa', active: true  },
+    { id: 18, name: 'Suzuki', holder: 'Suzuki', state: 'Japón', active: true },
+    { id: 19, name: 'Toyota', holder: 'Toyota', state: 'Japón', active: true },
+    { id: 20, name: 'Volkswagen', holder: 'Volkswagen', state: 'Alemania', active: true  },
+    { id: 21, name: 'Volvo', holder: 'Geely', state: 'Suecia', active: true }
+];
