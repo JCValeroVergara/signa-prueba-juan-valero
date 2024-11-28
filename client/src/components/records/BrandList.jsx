@@ -35,7 +35,9 @@ export const BrandList = () => {
 
     return (
         <div className='relative container mx-auto p-4'>
-            <h1 className='text-2xl font-bold mb-4'>Listado de Marcas</h1>
+            <div className='flex items-center w-4/5 h-12 bg-slate-400 rounded-xl text-2xl text-indigo-600 font-bold px-4'>
+                    <h1>Servicios / Listado de Marcas </h1>
+                </div>
             <div className='flex justify-end items-center mb-4'>
                 <ToggleSwitch isActive={filterActive} onToggle={handleToggleFilter} />
                 <span className='text-xl text-gray-500 ml-2'>

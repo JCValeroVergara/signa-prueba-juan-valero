@@ -1,8 +1,9 @@
+import { BrandRegister } from '../components';
 
 export const BrandRegisterPage = () => {
     return (
-        <>
-            <h1>Soy BrandRegisterPage</h1>
-        </>
+        <div className="animate-fade w-full h-full flex justify-center p-4">
+            <BrandRegister />
+        </div>
     );
 };
