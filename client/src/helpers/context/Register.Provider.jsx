@@ -15,8 +15,6 @@ export const RegisterProvider = ({ children }) => {
         setNewBrandData,
     };
 
-    console.log('newBrandData', newBrandData);
-
     return (
         <RegisterContext.Provider value={value}>
             {children}

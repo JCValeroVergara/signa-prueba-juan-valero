@@ -26,6 +26,7 @@ export const RegisterStep02 = () => {
                                 type='text'
                                 id='name'
                                 name='name'
+                                title='Ingrese el nombre de la marca'
                                 className='w-full h-10 border border-gray-300 rounded-lg text-xl text-gray-700 px-2'
                                 value={newBrandData.name || ''}
                                 readOnly={true}
@@ -37,6 +38,7 @@ export const RegisterStep02 = () => {
                                 type='text'
                                 id='holder'
                                 name='holder'
+                                title='Ingrese el nombre del titular de la marca'
                                 className='w-full h-10 border border-gray-300 rounded-lg text-xl text-gray-700 px-2'
                                 value={newBrandData.holder || ''}
                                 onChange={handleChange}
