@@ -1,7 +1,7 @@
 import React from 'react';
 import { Info } from '../../icons';
 
-export const SuccesfullDelete = ({onClick, message}) => {
+export const SuccesfullDelete = ({onClick, onClose, message}) => {
     return (
         <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-30">
             <div
@@ -32,7 +32,7 @@ export const SuccesfullDelete = ({onClick, message}) => {
                     className="text-red-800 bg-red-400 border border-red-800 hover:bg-red-600 hover:text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-red-600 dark:border-red-600 dark:hover:text-white dark:focus:ring-red-800"
                     data-dismiss-target="#alert-additional-content-3"
                     aria-label="Close"
-                    onClick={onClick}
+                    onClick={onClose}
                 >
                     Cancelar
                 </button>
