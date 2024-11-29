@@ -1,13 +1,20 @@
 import{ FaEdit, FaTrash } from 'react-icons/fa';
-import { brands } from '../../data';
 import { Pagination } from '../navigations';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ToggleSwitch } from '../buttons';
 
 export const BrandList = () => {
+    const [brands, setBrands] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [filterActive, setFilterActive] = useState(true);
     const itemsPerPage = 10;
+
+    useEffect(() => {
+        const storedBrands = localStorage.getItem('brands');
+        if (storedBrands) {
+            setBrands(JSON.parse(storedBrands));
+        }
+    }, []);
 
     //Ordenar marcas por Marca (name) ascendente
     const brandsSorted = brands.sort((a, b) => a.name.localeCompare(b.name));
