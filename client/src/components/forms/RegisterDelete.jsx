@@ -1,4 +1,4 @@
-import { act, useState } from 'react';
+import { useState } from 'react';
 import { SuccesfullDelete } from '../alerts';
 
 export const RegisterDelete = ({ id, onClick }) => {
