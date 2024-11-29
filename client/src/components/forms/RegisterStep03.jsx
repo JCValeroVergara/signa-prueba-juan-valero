@@ -1,8 +1,15 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { RegisterContext } from '../../helpers';
 
 export const RegisterStep03 = () => {
     const { newBrandData, setNewBrandData } = useContext(RegisterContext);
+    const [brands, setBrands] = useState([]);
+    const [suggestions, setSuggestions] = useState([]);
+
+    useEffect(() => {
+        const storedBrands = JSON.parse(localStorage.getItem('brands')) || [];
+        setBrands(storedBrands);
+    }, []);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -10,7 +17,23 @@ export const RegisterStep03 = () => {
             ...prev,
             [name]: value,
         }));
+        if (name === 'state' && value.trim() !== '') {
+            const filteredSuggestions = brands
+                .map((brand) => brand.state)
+                .filter((state) => state.toLowerCase().includes(value.toLowerCase()));
+            setSuggestions(filteredSuggestions);
+        } else {
+            setSuggestions([]); 
+        }
     };
+
+    const handleSuggestionClick = (suggestion) => {
+        setNewBrandData((prev) => ({
+            ...prev,
+            state: suggestion,
+        }));
+        setSuggestions([]);
+    }
 
     return (
         <div className='w-full md:w-4/5 h-[40vh] flex flex-col items-center'>
@@ -44,7 +67,7 @@ export const RegisterStep03 = () => {
                                 readOnly={true}
                             />
                         </div>
-                        <div className='flex flex-col justify-center w-full md:w-3/5 h-1/4 mt-4 md:mt-2'>
+                        <div className='relative flex flex-col justify-center w-full md:w-3/5 h-1/4 mt-4 md:mt-2'>
                             <label htmlFor='stateName' className='text-lg font-bold text-indigo-600'>Estado de la Marca</label>
                             <input
                                 type='text'
@@ -55,6 +78,22 @@ export const RegisterStep03 = () => {
                                 value={newBrandData.state || ''}
                                 onChange={handleChange}
                             />
+                            {/* Lista de sugerencias */}
+                            {suggestions.length > 0 && (
+                                <ul className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-lg max-h-40 text-xl text-gray-700 overflow-y-auto z-10">
+                                    {suggestions
+                                        .filter((item, index) => suggestions.indexOf(item) === index)
+                                        .map((suggestion, index) => (
+                                        <li
+                                            key={index}
+                                            onClick={() => handleSuggestionClick(suggestion)}
+                                            className="p-2 hover:bg-indigo-100 cursor-pointer"
+                                        >
+                                            {suggestion}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
                     </div>
                 </form>

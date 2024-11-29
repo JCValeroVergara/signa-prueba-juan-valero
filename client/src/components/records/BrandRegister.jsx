@@ -102,7 +102,7 @@ export const BrandRegister = () => {
                         {currentStep !== 3 ? (
                             <button
                                 onClick={handleNext}
-                                className="px-4 py-2 bg-indigo-500 text-white rounded-lg disabled:opacity-50"
+                                className="px-4 py-2 bg-indigo-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                                 disabled={isNextDisabled()}
                             >
                                 Siguiente
@@ -110,7 +110,7 @@ export const BrandRegister = () => {
                         ) : (
                                 <button
                                 onClick={handleSubmit}
-                                className="px-4 py-1 bg-green-500 text-white rounded-lg disabled:opacity-50"
+                                className="px-4 py-1 bg-green-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                                 disabled={isNextDisabled()}
                             >
                                 Registrar
