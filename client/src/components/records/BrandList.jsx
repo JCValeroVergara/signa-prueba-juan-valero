@@ -115,13 +115,15 @@ export const BrandList = () => {
                                             >
                                                 <FaEdit size={18} />
                                             </button>
+                                            {filterActive && (
                                             <button
                                                 className='text-red-500 hover:text-red-800 mr-2'
                                                 title='Eliminar'
                                                 onClick={() => handleDelete(marca.id)}
                                             >
                                                 <FaTrash size={18} />
-                                            </button>
+                                                </button>
+                                            )}
                                         </td>
                                     </tr>
                                 ))}
