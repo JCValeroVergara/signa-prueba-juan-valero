@@ -26,6 +26,7 @@ export const RegisterStep03 = () => {
                                 type='text'
                                 id='name'
                                 name='name'
+                                title='Nombre de la marca'
                                 className='w-full h-10 border border-gray-300 rounded-lg text-xl text-gray-700 px-2'
                                 value={newBrandData.name || ''}
                                 readOnly={true}
@@ -37,6 +38,7 @@ export const RegisterStep03 = () => {
                                 type='text'
                                 id='holder'
                                 name='holder'
+                                title='Titular de la marca'
                                 className='w-full h-10 border border-gray-300 rounded-lg text-xl text-gray-700 px-2'
                                 value={newBrandData.holder || ''}
                                 readOnly={true}
@@ -48,6 +50,7 @@ export const RegisterStep03 = () => {
                                 type='text'
                                 id='state'
                                 name='state'
+                                title='Ingrese Estado de origen de la marca'
                                 className='w-full h-10 border border-gray-300 rounded-lg text-xl text-gray-700 px-2'
                                 value={newBrandData.state || ''}
                                 onChange={handleChange}

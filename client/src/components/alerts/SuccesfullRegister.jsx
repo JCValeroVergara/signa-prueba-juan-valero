@@ -3,7 +3,7 @@ import { Info } from '../../icons';
 
 export const SuccesfullRegister = ({onClick, message}) => {
     return (
-        <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-slate-500 bg-opacity-30">
+        <div className="fixed top-0 left-0 z-50 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
             <div
                 className="p-4 mb-4 text-green-800 border border-green-600 rounded-lg bg-gray-100 dark:bg-slate-600 dark:text-green-400 dark:border-green-800"
                 role="alert"
